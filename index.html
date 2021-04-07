@@ -29,11 +29,16 @@ window.onload = function () {
                 document.getElementById("ADA").innerText = "ADA : "+new_evt.last+" -- "+new_evt.last*wellet+ " THB";
                
                new_cost = temp_cost - new_evt.last;
+               console.log(new_cost);
                temp_cost =  new_evt.last;
                if(new_cost > 0){
                    document.getElementById('ADA').style.color = "red";
-               } else {
-                document.getElementById('ADA').style.color = "green";
+               }
+               if(new_cost == 0){
+                   document.getElementById('ADA').style.color = "grey";
+               }
+               if(new_cost < 0){
+                   document.getElementById('ADA').style.color = "green";
                }
             } else if(new_evt.id == 33){
                 document.getElementById("BNB").innerText = "BNB : "+new_evt.last;
