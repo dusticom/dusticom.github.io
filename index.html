@@ -20,12 +20,13 @@ window.onload = function () {
         'wss://stream.binance.com:9443/ws/'
         conn.onmessage = function (evt) {
             new_evt = JSON.parse(evt.data)
-            got = document.getElementById("wellet").value;
+            // got = document.getElementById("wellet").value;
+            wellet = 71.6
             console.log(new_evt);
             if(new_evt.id == 4){
                 
              
-                document.getElementById("ADA").innerText = "ADA : "+new_evt.last+" -- "+new_evt.last*got+ " THB";
+                document.getElementById("ADA").innerText = "ADA : "+new_evt.last+" -- "+new_evt.last*wellet+ " THB";
                
                new_cost = temp_cost - new_evt.last;
                temp_cost =  new_evt.last;
