@@ -23,29 +23,14 @@ $(document).ready(function () {
             // got = document.getElementById("wellet").value;
            
             console.log(new_evt);
-            if(new_evt.id == 4){
-                
-             
-                document.getElementById("ADA").innerText = "ADA : "+new_evt.last+" -- "+new_evt.last*wellet+ " THB";
-               
-               new_cost = temp_cost - new_evt.last;
-               console.log(new_cost);
-               temp_cost =  new_evt.last;
-               if(new_cost > 0){
-                   document.getElementById('ADA').style.color = "red";
-               }
-               if(new_cost == 0){
-                   document.getElementById('ADA').style.color = "grey";
-               }
-               if(new_cost < 0){
-                   document.getElementById('ADA').style.color = "green";
-               }
-            } else if(new_evt.id == 33){
+            if(new_evt.stream == "market.ticker.thb_ada"){
+                document.getElementById("ADA").innerText = "ADA : "+new_evt.last;
+            } else if(new_evt.stream == "market.ticker.thb_bnb"){
                 document.getElementById("BNB").innerText = "BNB : "+new_evt.last;
             } else if(new_evt.stream == "market.ticker.thb_doge"){
                 document.getElementById("DOGE").innerText = "DOGE : "+new_evt.last;
             } else if(new_evt.stream == "market.ticker.thb_iost"){
-                document.getElementById("iost").innerText = "IOST : "+new_evt.last;
+                document.getElementById("IOST").innerText = "IOST : "+new_evt.last;
             
 
         };
