@@ -15,7 +15,10 @@ $(document).ready(function () {
     var temp_cost;
     var new_cost;
     if (window["WebSocket"]) {
-        conn = new WebSocket(`wss://api.bitkub.com/websocket-api/market.ticker.thb_ada,market.ticker.thb_bnb,market.ticker.thb_xrp
+        conn = new WebSocket(`wss://api.bitkub.com/websocket-api/market.ticker.thb_ada
+                                                                ,market.ticker.thb_bnb
+                                                                ,market.ticker.thb_xrp
+                                                                ,market.ticker.thb_doge
         `);
 
         'wss://stream.binance.com:9443/ws/'
@@ -43,8 +46,8 @@ $(document).ready(function () {
                }
             } else if(new_evt.id == 33){
                 document.getElementById("BNB").innerText = "BNB : "+new_evt.last;
-            } else {
-                document.getElementById("XRP").innerText = "XRP : "+new_evt.last;
+            } else if(new_evt.stream == "market.ticker.thb_doge"){
+                document.getElementById("DOGE").innerText = "DOGE : "+new_evt.last;
             }
             
 
@@ -69,9 +72,10 @@ $(document).ready(function () {
            
            
             <ul class="w3-ul w3-border">
-                <li id="ADA" ><input type="text" id="wellet" value=""></li>
+                <li id="ADA" ></li>
                 <li id="BNB" >Eve</li>
                 <li id="XRP" >Adam</li>
+                <li id="DOGE" >Adam</li>
               </ul>
         
       </div>
