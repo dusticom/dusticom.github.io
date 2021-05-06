@@ -15,11 +15,7 @@ $(document).ready(function () {
     var temp_cost;
     var new_cost;
     if (window["WebSocket"]) {
-        conn = new WebSocket(`wss://api.bitkub.com/websocket-api/market.ticker.thb_ada
-                                                                ,market.ticker.thb_bnb
-                                                                ,market.ticker.thb_xrp
-                                                                ,market.ticker.thb_doge
-        `);
+        conn = new WebSocket(`wss://api.bitkub.com/websocket-api/market.ticker.thb_ada,market.ticker.thb_bnb,market.ticker.thb_xrp,market.ticker.thb_doge`);
 
         'wss://stream.binance.com:9443/ws/'
         conn.onmessage = function (evt) {
