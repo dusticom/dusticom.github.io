@@ -44,7 +44,8 @@ $(document).ready(function () {
                 document.getElementById("BNB").innerText = "BNB : "+new_evt.last;
             } else if(new_evt.stream == "market.ticker.thb_doge"){
                 document.getElementById("DOGE").innerText = "DOGE : "+new_evt.last;
-            }
+            } else if(new_evt.stream == "market.ticker.thb_iost"){
+                document.getElementById("iost").innerText = "IOST : "+new_evt.last;
             
 
         };
@@ -70,7 +71,7 @@ $(document).ready(function () {
             <ul class="w3-ul w3-border">
                 <li id="ADA" ></li>
                 <li id="BNB" >Eve</li>
-                <li id="XRP" >Adam</li>
+                <li id="IOST" >Adam</li>
                 <li id="DOGE" >Adam</li>
               </ul>
         
