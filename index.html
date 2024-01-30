@@ -1,64 +1,20 @@
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Websocket API Demo</title>
-<script
-  src="https://code.jquery.com/jquery-1.12.4.js"
-  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-  crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
-<script type="text/javascript">
-$(document).ready(function () {
-
-    var conn;
-    var temp_cost;
-    var new_cost;
-    if (window["WebSocket"]) {
-        conn = new WebSocket(`wss://api.bitkub.com/websocket-api/market.ticker.thb_ada,market.ticker.thb_bnb,market.ticker.thb_iost,market.ticker.thb_doge`);
-
-        'wss://stream.binance.com:9443/ws/'
-        conn.onmessage = function (evt) {
-            new_evt = JSON.parse(evt.data)
-            // got = document.getElementById("wellet").value;
-           
-            console.log(new_evt);
-            if(new_evt.stream == "market.ticker.thb_ada"){
-                document.getElementById("ADA").innerText = "ADA : "+new_evt.last;
-            } else if(new_evt.stream == "market.ticker.thb_bnb"){
-                document.getElementById("BNB").innerText = "BNB : "+new_evt.last;
-            } else if(new_evt.stream == "market.ticker.thb_doge"){
-                document.getElementById("DOGE").innerText = "DOGE : "+new_evt.last;
-            } else if(new_evt.stream == "market.ticker.thb_iost"){
-                document.getElementById("IOST").innerText = "IOST : "+new_evt.last;
-            } else {
-            };
-        }
-     
-    }
-});
-
-
-
-</script>
-<style type="text/css">
-
-</style>
-</head>
-<body>
-<h3 align="center">My Port</h3>
-
-    <div class="w3-container">
-        
-           
-           
-            <ul class="w3-ul w3-border">
-                <li id="ADA" ></li>
-                <li id="BNB" >Eve</li>
-                <li id="IOST" >Adam</li>
-                <li id="DOGE" >Adam</li>
-              </ul>
-        
-      </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <script type="module" crossorigin src="/assets/index-gMM5Qej3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-MTXIl4am.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
